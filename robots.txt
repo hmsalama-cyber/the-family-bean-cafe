@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://YOUR-DOMAIN.pages.dev/sitemap.xml
+
+Sitemap: https://the-family-bean-cafe.davysebaz.workers.dev/sitemap.xml
