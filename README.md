@@ -20,8 +20,6 @@ Website for **The Family Bean Cafe**.
 - robots.txt and sitemap.xml
 
 ## Still to add
-- Actual café logo image asset in the repository
-- Real café, food and coffee photos
 - Final production domain
 
 ## Deployment
