@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The Family Bean Cafe — Relax! We make your day. Explore our coffee, breakfast, meals, drinks and desserts, and reserve a table.">
+  <meta name="theme-color" content="#4a2c20">
+  <title>The Family Bean Cafe | Dar es Salaam</title>
+  <meta property="og:title" content="The Family Bean Cafe">
+  <meta property="og:description" content="Relax! We make your day.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Restaurant",
+    "name":"The Family Bean Cafe",
+    "description":"Relax! We make your day.",
+    "servesCuisine":["Cafe","Breakfast","Burgers","Pasta","Salads","Desserts"],
+    "priceRange":"TZS"
+  }
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="#home" aria-label="The Family Bean Cafe home">
+      <span class="brand-mark" aria-hidden="true">☕</span>
+      <span><strong>The Family Bean Cafe</strong><small>Relax! We make your day.</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="nav" id="site-nav">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a><a href="#reserve">Reservations</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="container hero-content">
+    <p class="eyebrow">COFFEE • FOOD • GOOD COMPANY</p>
+    <h1>The Family Bean Cafe</h1>
+    <p class="tagline">Relax! We make your day.</p>
+    <p class="hero-copy">A warm place to enjoy great coffee, satisfying meals and time with the people who matter.</p>
+    <div class="hero-actions"><a class="btn btn-primary" href="#menu">View Menu</a><a class="btn btn-light" href="#reserve">Reserve a Table</a></div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container split">
+    <div><p class="eyebrow">WELCOME</p><h2>Your everyday place to relax.</h2></div>
+    <div><p>The Family Bean Cafe brings together coffee, fresh food and a welcoming atmosphere for breakfast, lunch, a quick drink or relaxed time with family and friends.</p><p>Our menu has something for different tastes, from classic coffee and breakfast favourites to burgers, pasta, salads, wraps, smoothies, mocktails and desserts.</p></div>
+  </div>
+</section>
+
+<section id="menu" class="section menu-section">
+  <div class="container">
+    <div class="section-heading"><div><p class="eyebrow">OUR MENU</p><h2>Something for everyone.</h2></div><p>All prices are in Tanzanian Shillings (TZS).</p></div>
+    <div id="menu-tabs" class="menu-tabs" role="tablist" aria-label="Menu categories"></div>
+    <div id="menu-grid" class="menu-grid"></div>
+  </div>
+</section>
+
+<section class="feature-band"><div class="container feature-grid">
+  <div><span>☕</span><h3>Fresh Coffee</h3><p>Classic hot and iced favourites.</p></div>
+  <div><span>🍽️</span><h3>Comfort Food</h3><p>Breakfast, mains, burgers and more.</p></div>
+  <div><span>🥤</span><h3>Refreshing Drinks</h3><p>Smoothies, mocktails and juices.</p></div>
+  <div><span>❤️</span><h3>Family Friendly</h3><p>A relaxed place to share good moments.</p></div>
+</div></section>
+
+<section id="gallery" class="section">
+  <div class="container"><p class="eyebrow">GALLERY</p><h2>A taste of The Family Bean Cafe.</h2>
+    <div class="gallery-grid"><div class="gallery-card">Add cafe photo</div><div class="gallery-card">Add food photo</div><div class="gallery-card">Add coffee photo</div></div>
+    <p class="muted">We will replace these placeholders with the cafe's real photos.</p>
+  </div>
+</section>
+
+<section id="reserve" class="section reserve-section">
+  <div class="container split">
+    <div><p class="eyebrow">RESERVATIONS</p><h2>Reserve your table.</h2><p>Send your preferred date, time and party size. The form is ready for WhatsApp integration once the cafe's official number is added.</p></div>
+    <form id="reservation-form" class="reservation-form">
+      <label>Name<input name="name" required autocomplete="name"></label>
+      <label>Phone / WhatsApp<input name="phone" required autocomplete="tel"></label>
+      <div class="form-row"><label>Date<input type="date" name="date" required></label><label>Time<input type="time" name="time" required></label></div>
+      <label>Number of guests<input type="number" name="guests" min="1" max="30" value="2" required></label>
+      <label>Special request<textarea name="request" rows="3" placeholder="Birthday, seating preference, etc."></textarea></label>
+      <button class="btn btn-primary" type="submit">Prepare Reservation</button>
+      <p id="reservation-status" class="form-status" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<section id="contact" class="section contact-section">
+  <div class="container"><p class="eyebrow">CONTACT</p><h2>Come and say hello.</h2>
+    <div class="contact-grid">
+      <div><strong>Location</strong><p>Address to be added.</p></div>
+      <div><strong>Phone / WhatsApp</strong><p>Official number to be added.</p></div>
+      <div><strong>Opening hours</strong><p>Hours to be added.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer"><div class="container footer-inner"><div><strong>The Family Bean Cafe</strong><p>Relax! We make your day.</p></div><p>© <span id="year"></span> The Family Bean Cafe</p></div></footer>
+<script src="script.js"></script>
+</body>
+</html>
