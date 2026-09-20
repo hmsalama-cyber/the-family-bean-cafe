@@ -4,20 +4,23 @@ Website for **The Family Bean Cafe**.
 
 **Tagline:** “Relax! We make your day.”
 
+## Business information
+- **Location:** Mbezi Beach, near Mbezi Beach Lutheran Church, Dar es Salaam
+- **Phone / WhatsApp:** +255 768 957 143
+- **Opening hours:** 7:00 AM – 9:00 PM, every day
+- **Instagram:** @thefamilybean_cafe
+
 ## Included
 - Responsive mobile-first café website
 - Complete menu with prices in TZS
 - Menu category filtering
-- Reservation form prepared for WhatsApp integration
+- Working WhatsApp reservation flow
+- Contact details and Instagram link
 - SEO metadata and Restaurant structured data
 - robots.txt and sitemap.xml
 
 ## Still to add
-- Official café logo
-- Exact physical address
-- Official phone / WhatsApp number
-- Opening hours
-- Social media links
+- Actual café logo image asset in the repository
 - Real café, food and coffee photos
 - Final production domain
 

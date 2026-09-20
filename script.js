@@ -20,6 +20,14 @@ document.getElementById("year").textContent=new Date().getFullYear();
 document.getElementById("reservation-form").addEventListener("submit",e=>{
   e.preventDefault();
   const d=new FormData(e.currentTarget),status=document.getElementById("reservation-status");
-  status.textContent="Your reservation request is prepared. WhatsApp will be connected after the cafe's official number is added.";
-  console.log("Reservation request",Object.fromEntries(d.entries()));
+  const message =
+    "Hello The Family Bean Cafe! I'd like to make a reservation.%0A%0A" +
+    "Name: "+encodeURIComponent(d.get("name"))+"%0A" +
+    "Phone: "+encodeURIComponent(d.get("phone"))+"%0A" +
+    "Date: "+encodeURIComponent(d.get("date"))+"%0A" +
+    "Time: "+encodeURIComponent(d.get("time"))+"%0A" +
+    "Guests: "+encodeURIComponent(d.get("guests"))+"%0A" +
+    "Special request: "+encodeURIComponent(d.get("request")||"None");
+  status.textContent="Opening WhatsApp with your reservation request…";
+  window.open("https://wa.me/255768957143?text="+message,"_blank","noopener");
 });
