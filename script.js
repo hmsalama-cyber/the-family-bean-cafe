@@ -8,12 +8,14 @@ const formatTZS = (amount) =>
    MENU DATA
 ========================================================= */
 
+
 const menuData = {
   "Breakfast": [
     ["Easy Breakfast", 6000],
     ["Egg & Avo Smash Toast", 8000],
     ["Spanish Omelette", 8000],
     ["Soup of the Day", 10000],
+    ["Kienyeji Chicken Soup & Chapati", 10000],
     ["Healthy Breakfast", 15000]
   ],
 
@@ -30,26 +32,29 @@ const menuData = {
   ],
 
   "Main Dishes": [
-    ["Fried Chicken Wings / Drumstick", 15000],
-    ["Beef / Chicken Skewers", 15000],
+    ["Fried Drumsticks", 15000],
+    ["Fried Chicken Wings", 15000],
+    ["Beef Skewers", 15000],
+    ["Chicken Skewers", 15000],
     ["Juicy T-Bone Beef", 15000],
     ["Chicken Fajita", 15000],
     ["Peri Peri Fried Chicken", 15000],
     ["Crispy Chicken", 15000],
-    ["Chicken / Beef Makange", 16000],
+    ["Chicken Makange", 16000],
+    ["Beef Makange", 16000],
     ["Beef Stir Fry", 17000]
   ],
 
   "Sandwiches": [
     ["Roast Beef Sandwich", 12000],
-    ["Vegan Sandwich", 12000],
+    ["Vegetarian Sandwich", 12000],
     ["Chicken Sandwich", 13000]
   ],
 
   "Wraps": [
-    ["Vegan Wraps", 12000],
-    ["Beef Wraps", 14000],
-    ["Chicken Wraps", 14000]
+    ["Vegetarian Wrap", 12000],
+    ["Beef Wrap", 14000],
+    ["Chicken Wrap", 14000]
   ],
 
   "Salads": [
@@ -61,7 +66,8 @@ const menuData = {
 
   "Waffles & Pancakes": [
     ["Classic Waffle", 8000],
-    ["Nutella / Peanut Butter Waffle", 10000],
+    ["Nutella Waffle", 10000],
+    ["Peanut Butter Waffle", 10000],
     ["Banana Nut Craze Special", 12000],
     ["Strawberry & Cream", 12000]
   ],
@@ -93,7 +99,7 @@ const menuData = {
     ["Avocado", 7000],
     ["Detox", 8000],
     ["Green", 8000],
-    ["Tropical", 8000]
+    ["Mixed Fruits", 8000]
   ],
 
   "Milkshakes": [
@@ -102,7 +108,6 @@ const menuData = {
     ["Espresso", 8000],
     ["Chocolate", 8000],
     ["Banana", 8000],
-    ["Oreo", 8000],
     ["Tende", 8000]
   ],
 
@@ -117,7 +122,7 @@ const menuData = {
 
   "Refreshers": [
     ["Seasonal Juice", 5000],
-    ["Tropical Juice", 5000],
+    ["Mix Juice", 5000],
     ["Carrot Juice", 5000],
     ["Orange Juice", 7000],
     ["Mint Lemonade", 7000],
@@ -131,8 +136,7 @@ const menuData = {
     ["Onion Rings", 3000],
     ["Mixed Steamed Veggies", 4000],
     ["Extra Cheese", 4000],
-    ["Chips Omelette — Classic Zege Edition", 7000],
-    ["Special of the Day", 10000]
+    ["Chips Omelette — Classic Zege Edition", 7000]
   ],
 
   "Desserts": [
@@ -144,12 +148,13 @@ const menuData = {
   ],
 
   "Junior Dishes": [
-    ["Chicken Wings", 8000],
+    ["Sweet Chicken Wings", 8000],
     ["Junior Burger", 8000],
-    ["Chicken Nugget", 8000],
+    ["Chicken Nuggets", 8000],
     ["Chicken Lollipop", 8000]
   ]
 };
+
 
 
 /* =========================================================
