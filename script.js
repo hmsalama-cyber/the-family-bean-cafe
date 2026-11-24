@@ -265,28 +265,81 @@ const menuGrid = document.querySelector("#menu-grid");
 
 const categories = Object.keys(menuData);
 
+
 function renderMenu(category) {
   if (!menuGrid) return;
 
-  menuGrid.innerHTML = menuData[category]
-    .map(
-      ([name, price]) => `
-        <article class="menu-item">
-          <div>
-            <h3>${name}</h3>
-            <p>${category}</p>
-          </div>
+  const categoryPhotos = {
+    "Coffee": "coffee-carousel.png",
+    "Main Dishes": "crispy-chicken-carousel.png",
+    "Sandwiches": "sandwich-coffee-dessert-carousel.png"
+  };
 
-          <div class="menu-price">
-            ${formatTZS(price)}
+  const photo = categoryPhotos[category];
+
+  const categoryBanner = photo ? `
+    <figure class="menu-category-banner">
+      <img
+        src="${photo}"
+        alt="${category} inspiration"
+        loading="lazy"
+        decoding="async"
+      >
+      <figcaption>
+        Illustrative cafe photography
+      </figcaption>
+    </figure>
+  ` : "";
+
+  menuGrid.innerHTML = categoryBanner +
+    menuData[category].map(([name, price]) => {
+
+      const id = `${category}-${name}`
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-");
+
+      return `
+        <article class="menu-item enhanced-menu-card">
+          <div class="menu-card-content">
+
+            <span class="menu-category-label">
+              ${category}
+            </span>
+
+            <h3>${name}</h3>
+
+            <div class="menu-card-footer">
+
+              <span class="menu-price">
+                ${formatTZS(price)}
+              </span>
+
+              <button
+                type="button"
+                class="menu-add-button"
+                data-menu-add="${id}"
+                aria-label="Add ${name} to order"
+              >
+                + Add
+              </button>
+
+            </div>
+
           </div>
         </article>
-      `
-    )
-    .join("");
+      `;
+    }).join("");
+
+  menuGrid
+    .querySelectorAll("[data-menu-add]")
+    .forEach(button => {
+      button.addEventListener("click", () => {
+        addToCart(button.dataset.menuAdd);
+      });
+    });
 }
 
-function renderMenuTabs() {
+
   if (!menuTabs) return;
 
   menuTabs.innerHTML = categories
