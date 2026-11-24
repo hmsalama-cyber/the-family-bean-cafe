@@ -400,17 +400,8 @@ function renderMenu(category) {
         </article>
       `;
     })
-    .join("") + (
-      menuData[category].some(([name]) =>
-        menuImages[`${category}-${name}`
-          .toLowerCase()
-          .replace(/[^a-z0-9]+/g, "-")]
-      )
-      ? `<p style="grid-column:1/-1;font-size:12px;color:var(--muted)">
-          Images are illustrative. Actual presentation may vary.
-        </p>`
-      : ""
-    );
+  
+    .join(""); 
 
   menuGrid
     .querySelectorAll("[data-menu-add]")
