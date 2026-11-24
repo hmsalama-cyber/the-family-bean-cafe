@@ -340,6 +340,7 @@ function renderMenu(category) {
 }
 
 
+  function renderMenuTabs() {
   if (!menuTabs) return;
 
   menuTabs.innerHTML = categories
