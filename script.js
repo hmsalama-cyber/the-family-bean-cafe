@@ -266,40 +266,110 @@ const menuGrid = document.querySelector("#menu-grid");
 const categories = Object.keys(menuData);
 
 
+
+/* MENU IMAGE DIRECTORY */
+
+const menuImages = {
+  "breakfast-easy-breakfast": "easy-breakfast.jpg",
+  "breakfast-egg-avo-smash-toast": "egg-avo-toast.jpg",
+  "breakfast-spanish-omelette": "spanish-omelette.jpg",
+  "breakfast-healthy-breakfast": "healthy-breakfast.jpg",
+
+  "burgers-veggie-burger": "veggie-burger.jpg",
+  "burgers-chicken-mozzarella-burger": "chicken-mozzarella-burger.jpg",
+  "burgers-classic-cheese-beef-burger": "beef-burger.jpg",
+
+  "pasta-spaghetti-bolognese": "spaghetti-bolognese.jpg",
+  "pasta-vegan-pasta": "vegan-pasta.jpg",
+  "pasta-chicken-alfredo-pasta": "chicken-alfredo-pasta.jpg",
+
+  "main-dishes-fried-drumsticks": "fried-drumsticks.jpg",
+  "main-dishes-fried-chicken-wings": "fried-chicken-wings.jpg",
+  "main-dishes-beef-skewers": "beef-skewers.jpg",
+  "main-dishes-chicken-skewers": "chicken-skewers.jpg",
+  "main-dishes-juicy-t-bone-beef": "juicy-t-bone-beef.jpg",
+  "main-dishes-chicken-fajita": "chicken-fajita.jpg",
+  "main-dishes-peri-peri-fried-chicken": "peri-peri-fried-chicken.jpg",
+  "main-dishes-crispy-chicken": "crispy-chicken.jpg",
+  "main-dishes-chicken-makange": "chicken-makange.jpg",
+  "main-dishes-beef-makange": "beef-makange.jpg",
+  "main-dishes-beef-stir-fry": "beef-stir-fry.jpg",
+
+  "sandwiches-roast-beef-sandwich": "roast-beef-sandwich.jpg",
+  "sandwiches-vegetarian-sandwich": "vegetarian-sandwich.jpg",
+  "sandwiches-chicken-sandwich": "chicken-sandwich.jpg",
+
+  "wraps-vegetarian-wrap": "vegetarian-wrap.jpg",
+  "wraps-beef-wrap": "beef-wrap.jpg",
+  "wraps-chicken-wrap": "chicken-wrap.jpg",
+
+  "salads-beef-mango-salad": "beef-mango-salad.jpg",
+  "salads-chicken-caesar-salad": "chicken-caesar.jpg",
+  "salads-chicken-salad": "chicken-salad.jpg",
+  "salads-mango-salsa-salad": "mango-salsa-salad.jpg",
+
+  "waffles-pancakes-classic-waffle": "classic-waffle.jpg",
+  "waffles-pancakes-nutella-waffle": "nutella-waffle.jpg",
+  "waffles-pancakes-peanut-butter-waffle": "peanut-butter-waffle.jpg",
+  "waffles-pancakes-banana-nut-craze-special": "banana-nut-craze-special.jpg",
+  "waffles-pancakes-strawberry-cream": "strawberry-and-cream.jpg",
+
+  "coffee-espresso": "espresso.jpg",
+  "coffee-cappuccino": "cappuccino.jpg",
+  "coffee-cafe-latte": "cafe-latte.jpg",
+  "coffee-hot-chocolate": "hot-chocolate.jpg",
+
+  "tea-herbal-tea": "herbal-tea.jpg",
+
+  "smoothies-green": "green-smoothie.jpg",
+
+  "milkshakes-vanilla": "vanilla-milkshake.jpg",
+  "milkshakes-strawberry": "strawberry-milkshake.jpg",
+  "milkshakes-chocolate": "chocolate-milkshake.jpg",
+
+  "mocktails-mojito": "mojito.jpg",
+
+  "refreshers-orange-juice": "orange-juice.jpg",
+
+  "desserts-fruit-salad-seasonal-fruit-": "fruit-salad.jpg",
+
+  "junior-dishes-sweet-chicken-wings": "sweet-chicken-wings.jpg",
+  "junior-dishes-chicken-nuggets": "chicken-nuggets.jpg"
+};
+
+
+/* VISUAL MENU CARDS */
+
 function renderMenu(category) {
-  if (!menuGrid) return;
+  if (!menuGrid || !menuData[category]) return;
 
-  const categoryPhotos = {
-    "Coffee": "coffee-carousel.png",
-    "Main Dishes": "crispy-chicken-carousel.png",
-    "Sandwiches": "sandwich-coffee-dessert-carousel.png"
-  };
-
-  const photo = categoryPhotos[category];
-
-  const categoryBanner = photo ? `
-    <figure class="menu-category-banner">
-      <img
-        src="${photo}"
-        alt="${category} inspiration"
-        loading="lazy"
-        decoding="async"
-      >
-      <figcaption>
-        Illustrative cafe photography
-      </figcaption>
-    </figure>
-  ` : "";
-
-  menuGrid.innerHTML = categoryBanner +
-    menuData[category].map(([name, price]) => {
+  menuGrid.innerHTML = menuData[category]
+    .map(([name, price]) => {
 
       const id = `${category}-${name}`
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, "-");
 
+      const image = menuImages[id];
+
+      const imageHTML = image ? `
+        <img
+          class="menu-food-image"
+          src="images/menu/${image}"
+          alt="Illustrative image of ${name}"
+          loading="lazy"
+          decoding="async"
+          width="1200"
+          height="900"
+          onerror="this.remove()"
+        >
+      ` : "";
+
       return `
         <article class="menu-item enhanced-menu-card">
+
+          ${imageHTML}
+
           <div class="menu-card-content">
 
             <span class="menu-category-label">
@@ -326,9 +396,21 @@ function renderMenu(category) {
             </div>
 
           </div>
+
         </article>
       `;
-    }).join("");
+    })
+    .join("") + (
+      menuData[category].some(([name]) =>
+        menuImages[`${category}-${name}`
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")]
+      )
+      ? `<p style="grid-column:1/-1;font-size:12px;color:var(--muted)">
+          Images are illustrative. Actual presentation may vary.
+        </p>`
+      : ""
+    );
 
   menuGrid
     .querySelectorAll("[data-menu-add]")
@@ -338,7 +420,6 @@ function renderMenu(category) {
       });
     });
 }
-
 
   function renderMenuTabs() {
   if (!menuTabs) return;
