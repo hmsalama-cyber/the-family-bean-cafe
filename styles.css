@@ -1151,3 +1151,197 @@ textarea {
   }
 
 }
+
+
+/* ==========================================
+   ENHANCED MENU EXPERIENCE
+========================================== */
+
+.menu-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.enhanced-menu-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(47, 26, 19, 0.05);
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.enhanced-menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.menu-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px;
+  gap: 10px;
+}
+
+.menu-category-label {
+  color: var(--coffee-soft);
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.enhanced-menu-card h3 {
+  color: var(--coffee-dark);
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 0 0 12px;
+}
+
+.menu-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: auto;
+  gap: 12px;
+}
+
+.enhanced-menu-card .menu-price {
+  color: var(--coffee);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.menu-add-button {
+  border: none;
+  background: var(--coffee);
+  color: var(--white);
+  border-radius: 999px;
+  padding: 10px 18px;
+  min-height: 44px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease,
+              transform 0.2s ease;
+}
+
+.menu-add-button:hover {
+  background: var(--coffee-soft);
+}
+
+.menu-add-button:active {
+  transform: scale(0.95);
+}
+
+.menu-add-button:focus-visible {
+  outline: 3px solid var(--caramel);
+  outline-offset: 3px;
+}
+
+/* Category photography */
+
+.menu-category-banner {
+  grid-column: 1 / -1;
+  margin: 0 0 8px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--cream-dark);
+}
+
+.menu-category-banner img {
+  display: block;
+  width: 100%;
+  height: clamp(180px, 30vw, 320px);
+  object-fit: cover;
+}
+
+.menu-category-banner figcaption {
+  padding: 8px 16px;
+  font-size: 11px;
+  color: var(--muted);
+  text-align: right;
+}
+
+/* Individual food photography */
+
+.menu-food-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--cream-dark);
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .menu-card-content {
+    padding: 12px;
+    gap: 7px;
+  }
+
+  .enhanced-menu-card h3 {
+    font-size: 15px;
+  }
+
+  .enhanced-menu-card .menu-price {
+    font-size: 14px;
+  }
+
+  .menu-card-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .menu-add-button {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .menu-category-label {
+    font-size: 9px;
+    letter-spacing: 0.8px;
+  }
+
+  .menu-category-banner img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 340px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enhanced-menu-card,
+  .menu-add-button {
+    transition: none;
+  }
+
+  .enhanced-menu-card:hover {
+    transform: none;
+  }
+}
